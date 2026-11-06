@@ -30,9 +30,9 @@
 
         header {
             text-align: center;
-            padding: 20px 0 30px;
+            padding: 20px 0 25px;
             border-bottom: 2px solid #e9ecef;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         h1 {
@@ -44,6 +44,40 @@
         .subtitle {
             color: #6c757d;
             font-size: 0.95rem;
+        }
+
+        /* 版本變更紀錄 Card */
+        .changelog-card {
+            background-color: #f0f7ff;
+            border: 1px solid #cce5ff;
+            border-radius: var(--border-radius);
+            padding: 18px 20px;
+            margin-bottom: 25px;
+        }
+
+        .changelog-title {
+            color: #004085;
+            font-weight: bold;
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .changelog-list {
+            margin: 0;
+            padding-left: 20px;
+            color: #004085;
+            font-size: 0.9rem;
+        }
+
+        .changelog-list li {
+            margin-bottom: 6px;
+        }
+
+        .changelog-list li:last-child {
+            margin-bottom: 0;
         }
 
         .day-card {
@@ -89,7 +123,7 @@
         }
 
         .time-tag {
-            min-width: 75px;
+            min-width: 85px;
             font-weight: 600;
             color: #495057;
             font-size: 0.9rem;
@@ -132,7 +166,8 @@
             padding: 4px 10px;
             border-radius: 6px;
             font-weight: 500;
-            margin-top: 4px;
+            margin-top: 6px;
+            margin-right: 4px;
             transition: background-color 0.2s;
         }
 
@@ -153,29 +188,42 @@
 
 <div class="container">
     <header>
-        <h1>🇯🇵 東京・埼玉・千葉 8日7夜行程</h1>
+        <h1>🗺️ 東京・埼玉・千葉 8日7夜冬日行程</h1>
         <div class="subtitle">日期：2026年11月19日（四）— 11月26日（四）</div>
     </header>
+
+    <!-- 行程異動說明 Section -->
+    <div class="changelog-card">
+        <div class="changelog-title">
+            <span>📌 最新版本行程改動說明（對比第一版）</span>
+        </div>
+        <ul class="changelog-list">
+            <li><strong>Day 1 (11/19) 晚餐聚會</strong>：第一版原定於中野 Maguro Mart 晚餐，最新改為前往御徒町 <strong>鴨to葱 (Ramen Kamo to Negi)</strong> 享用拉麵，並安排在該處與<strong>阿安 Meet</strong>。（<em>Maguro Mart 調整至 Day 2 晚餐</em>）</li>
+            <li><strong>Day 4 (11/22) 午餐調整</strong>：第一版原定食 うどん しろおび，最新改為前往 <strong>迴轉壽司 銀座 Onodera 表參道本店</strong>（建議 11:00 前往避開人潮）。</li>
+            <li><strong>Day 4 (11/22) 下午動線</strong>：第一版原定去上野公園（忍者節）與亞美橫町，最新優化為表參道周邊動線：可前往 <strong>明治神宮外苑銀杏祭</strong> 欣賞銀杏或於 <strong>表參道/原宿/澀谷自由購物</strong>（視當日天氣彈性決定）。</li>
+            <li><strong>Day 4 (11/22) 晚餐調整</strong>：第一版原定食 鴨to葱，最新改為前往原宿人氣烏冬店 <strong>麵散 (Menchirashi)</strong> 享用明太子奶油烏冬與天婦羅。</li>
+        </ul>
+    </div>
 
     <!-- Day 1 -->
     <div class="day-card">
         <div class="day-header">
-            <span>Day 1 ｜ 抵達與晚餐聚會</span>
+            <span>Day 1 ｜ 抵達・草加安頓 ＆ 鴨蔥拉麵聚會</span>
             <span class="day-date">11/19 (四)</span>
         </div>
         <div class="item-list">
             <div class="item">
                 <div class="time-tag">下午</div>
                 <div class="details">
-                    <div class="title">航班抵達與前往草加市基地</div>
-                    <div class="desc">辦理入境手續，乘車前往埼玉縣草加市家人大本營 check-in 及整理行李。</div>
+                    <div class="title">機場抵達與草加住處 Check-in</div>
+                    <div class="desc">羽田/成田機場乘車直達埼玉縣草加市（谷塚站）住處放置行李。</div>
                 </div>
             </div>
             <div class="item">
                 <div class="time-tag">晚餐</div>
                 <div class="details">
                     <div class="title">鴨to葱 (Ramen Kamo to Negi) 御徒町本店</div>
-                    <div class="desc">享用招牌鴨肉大蔥拉麵。</div>
+                    <div class="desc">享用超人氣鴨肉大蔥拉麵。</div>
                     <div><span class="note-badge">🤝 備註：喺度 Meet 阿安</span></div>
                     <a href="https://maps.app.goo.gl/p2P42XWMGGARl1iH2" target="_blank" class="map-btn">📍 Google Maps 導航</a>
                 </div>
@@ -186,23 +234,39 @@
     <!-- Day 2 -->
     <div class="day-card">
         <div class="day-header">
-            <span>Day 2 ｜ 日本橋床寢體驗與下町散策</span>
+            <span>Day 2 ｜ 東東京精華：紅鶴 Pancake、壽司班、晴空塔、Maguro Mart</span>
             <span class="day-date">11/20 (五)</span>
         </div>
         <div class="item-list">
             <div class="item">
-                <div class="time-tag">上午</div>
+                <div class="time-tag">清晨/早午餐</div>
                 <div class="details">
-                    <div class="title">日本橋西川 (Nihonbashi Nishikawa)</div>
-                    <div class="desc">進行專業床寢諮詢及客製化枕頭/床墊試用體驗。</div>
-                    <a href="https://maps.google.com/?q=Nihonbashi+Nishikawa" target="_blank" class="map-btn">📍 Google Maps 導航</a>
+                    <div class="title">淺草 Benizuru Pancake (紅鶴)</div>
+                    <div class="desc">05:00 出門，06:00 到達排隊（首選 10:00 拿整理卷）。</div>
+                    <a href="https://maps.google.com/?q=Benizuru+Asakusa" target="_blank" class="map-btn">📍 Google Maps 導航</a>
                 </div>
             </div>
             <div class="item">
-                <div class="time-tag">下午/晚餐</div>
+                <div class="time-tag">12:00</div>
                 <div class="details">
-                    <div class="title">淺草 / 錦糸町散策 & Maguro Mart</div>
-                    <div class="desc">前往 Maguro Mart 享用著名金槍魚全鮪料理。</div>
+                    <div class="title">Sushi Making Tokyo</div>
+                    <div class="desc">預約 12:00 PM 場次，親手製作壽司並即時享用。</div>
+                    <a href="https://maps.google.com/?q=Sushi+Making+Tokyo" target="_blank" class="map-btn">📍 Google Maps 導航</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="time-tag">下午</div>
+                <div class="details">
+                    <div class="title">Tokyo Skytree 晴空塔 & Pokémon Center Skytree</div>
+                    <div class="desc">漫步過隅田川，前往晴空塔購物血拼。</div>
+                    <a href="https://maps.google.com/?q=Pokemon+Center+Skytree+Town" target="_blank" class="map-btn">📍 Google Maps 導航</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="time-tag">晚餐</div>
+                <div class="details">
+                    <div class="title">Maguro Mart (中野)</div>
+                    <div class="desc">品嚐主打各部位刺身、壽司與創意烤物的頂級吞拿魚專門料理。</div>
                     <a href="https://maps.google.com/?q=Maguro+Mart+Nakano" target="_blank" class="map-btn">📍 Google Maps 導航</a>
                 </div>
             </div>
@@ -212,16 +276,48 @@
     <!-- Day 3 -->
     <div class="day-card">
         <div class="day-header">
-            <span>Day 3 ｜ 寶可夢盛會 (CL Chiba 2027)</span>
+            <span>Day 3 ｜ 築地海膽、天丼、Pokémon DX、訂造枕頭、銀座晚餐</span>
             <span class="day-date">11/21 (六)</span>
         </div>
         <div class="item-list">
             <div class="item">
-                <div class="time-tag">全天</div>
+                <div class="time-tag">早餐</div>
                 <div class="details">
-                    <div class="title">幕張展覽館 (Makuhari Messe)</div>
-                    <div class="desc">參加 Pokémon Champions League 2027 Chiba 現場賽事與活動。</div>
-                    <a href="https://maps.google.com/?q=Makuhari+Messe" target="_blank" class="map-btn">📍 Google Maps 導航</a>
+                    <div class="title">Tsukiji Unitora Nakadori (うに虎 本店)</div>
+                    <div class="desc">享用奢華海膽丼。</div>
+                    <a href="https://maps.google.com/?q=Tsukiji+Unitora+Nakadori" target="_blank" class="map-btn">📍 Google Maps 導航</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="time-tag">晨間</div>
+                <div class="details">
+                    <div class="title">Matcha Stand Maruni TOKYO TSUKIJI</div>
+                    <div class="desc">品嚐現刷職人抹茶。</div>
+                    <a href="https://maps.google.com/?q=Matcha+Stand+Maruni+Tsukiji" target="_blank" class="map-btn">📍 Google Maps 導航</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="time-tag">午餐</div>
+                <div class="details">
+                    <div class="title">天丼金子半之助 日本橋總本店</div>
+                    <div class="desc">享用酥脆金黃天丼。</div>
+                    <a href="https://maps.google.com/?q=Tendon+Kaneko+Hannosuke+Nihonbashi" target="_blank" class="map-btn">📍 Google Maps 導航</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="time-tag">下午</div>
+                <div class="details">
+                    <div class="title">Pokémon Center DX & 日本橋西川 (Nihonbashi Nishikawa)</div>
+                    <div class="desc">Pokémon DX 打卡購物，隨後前往日本橋西川進行專業訂造枕頭測量與諮詢。</div>
+                    <a href="https://maps.google.com/?q=Nihonbashi+Nishikawa" target="_blank" class="map-btn">📍 Google Maps 導航</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="time-tag">晚餐</div>
+                <div class="details">
+                    <div class="title">Ginza Orions (銀座オリオンズ)</div>
+                    <div class="desc">前往銀座享用輕鬆晚膳。</div>
+                    <a href="https://maps.google.com/?q=Ginza+Orions" target="_blank" class="map-btn">📍 Google Maps 導航</a>
                 </div>
             </div>
         </div>
@@ -230,30 +326,33 @@
     <!-- Day 4 -->
     <div class="day-card">
         <div class="day-header">
-            <span>Day 4 ｜ 表參道高質壽司與原宿潮流烏冬</span>
+            <span>Day 4 ｜ 表參道迴轉壽司、明治神宮外苑銀杏祭/自由購物、潮流烏冬</span>
             <span class="day-date">11/22 (日)</span>
         </div>
         <div class="item-list">
             <div class="item">
-                <div class="time-tag">11:00</div>
+                <div class="time-tag">11:00 午餐</div>
                 <div class="details">
                     <div class="title">迴轉壽司 銀座 Onodera 表參道本店</div>
-                    <div class="desc">享用頂級高質感迴轉壽司（建議 11:00 左右到達避開人潮）。</div>
+                    <div class="desc">頂級高質迴轉壽司（建議 11:00 左右到達避開排隊人潮）。</div>
                     <a href="https://maps.app.goo.gl/yZOxItGNGGARWwp9" target="_blank" class="map-btn">📍 Google Maps 導航</a>
                 </div>
             </div>
             <div class="item">
                 <div class="time-tag">下午</div>
                 <div class="details">
-                    <div class="title">表參道 / 原宿 / 澀谷商圈購物散策</div>
-                    <div class="desc">漫步表參道、貓街及澀谷各大商場。</div>
+                    <div class="title">明治神宮外苑銀杏祭 或 表參道/原宿/澀谷自由購物</div>
+                    <div class="desc">漫步銀杏大道欣賞秋葉美景，或於表參道、貓街及澀谷各大商場自由購物（到時再決定）。</div>
+                    <div><span class="note-badge">💡 彈性備註：視乎當日天氣與行程節奏擇一或併行</span></div>
+                    <a href="https://matcha-jp.com/tw/27821" target="_blank" class="map-btn">📖 明治神宮外苑銀杏祭介紹</a>
+                    <a href="https://maps.google.com/?q=Meiji+Jingu+Gaien" target="_blank" class="map-btn">📍 明治神宮外苑導航</a>
                 </div>
             </div>
             <div class="item">
                 <div class="time-tag">晚餐</div>
                 <div class="details">
                     <div class="title">麵散 (Menchirashi)</div>
-                    <div class="desc">人氣手工彈牙讚岐烏冬，招牌明太子奶油烏冬及現炸天婦羅。</div>
+                    <div class="desc">原宿人氣手工彈牙讚岐烏冬，招牌明太子奶油烏冬及現炸天婦羅。</div>
                     <a href="https://maps.app.goo.gl/651p9WNGGARi41d0" target="_blank" class="map-btn">📍 Google Maps 導航</a>
                 </div>
             </div>
@@ -263,24 +362,32 @@
     <!-- Day 5 -->
     <div class="day-card">
         <div class="day-header">
-            <span>Day 5 ｜ 展覽巡禮與寶可夢 Skytree 路線</span>
+            <span>Day 5 ｜ 千葉幕張 Pokémon CL 大會與周邊探索</span>
             <span class="day-date">11/23 (一)</span>
         </div>
         <div class="item-list">
             <div class="item">
-                <div class="time-tag">上午</div>
+                <div class="time-tag">早餐</div>
                 <div class="details">
-                    <div class="title">東京國際論壇 Yurakucho Museum</div>
-                    <div class="desc">參觀 MAPA Expo 展覽。</div>
-                    <a href="https://maps.google.com/?q=Tokyo+International+Forum" target="_blank" class="map-btn">📍 Google Maps 導航</a>
+                    <div class="title">Komeda's Coffee (コメダ珈琲店) 足立竹之塚店</div>
+                    <div class="desc">出發前嘆招牌厚切多士配咖啡。</div>
+                    <a href="https://maps.google.com/?q=Komeda+Coffee+Takenotsuka" target="_blank" class="map-btn">📍 Google Maps 導航</a>
                 </div>
             </div>
             <div class="item">
-                <div class="time-tag">下午</div>
+                <div class="time-tag">全天</div>
                 <div class="details">
-                    <div class="title">Pokémon Center Skytree Town & 晴空塔</div>
-                    <div class="desc">周邊採購及晴空塔景觀體驗。</div>
-                    <a href="https://maps.google.com/?q=Pokemon+Center+Skytree+Town" target="_blank" class="map-btn">📍 Google Maps 導航</a>
+                    <div class="title">幕張展覽館 (Makuhari Messe 4-6號館)</div>
+                    <div class="desc">參加 Pokémon Japan Champions League 2027 Chiba；順遊 Plena 幕張及 AEON Mall 幕張新都心 TCG 專賣區。</div>
+                    <a href="https://maps.google.com/?q=Makuhari+Messe" target="_blank" class="map-btn">📍 Google Maps 導航</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="time-tag">晚餐</div>
+                <div class="details">
+                    <div class="title">Makuhari Bay Park Hikodori Restaurant (幕張ベイパーク 彦酉)</div>
+                    <div class="desc">享用在地食材日式晚膳。</div>
+                    <a href="https://maps.google.com/?q=Hikodori+Makuhari+Bay+Park" target="_blank" class="map-btn">📍 Google Maps 導航</a>
                 </div>
             </div>
         </div>
@@ -289,23 +396,39 @@
     <!-- Day 6 -->
     <div class="day-card">
         <div class="day-header">
-            <span>Day 6 ｜ 文化體驗與銀座寶可夢探索</span>
+            <span>Day 6 ｜ 拉麵班、MAPA EXPO、新宿購物 & 沾麵</span>
             <span class="day-date">11/24 (二)</span>
         </div>
         <div class="item-list">
             <div class="item">
                 <div class="time-tag">上午</div>
                 <div class="details">
-                    <div class="title">日式料理烹飪手作課程</div>
-                    <div class="desc">體驗道地日本家庭料理製作。</div>
+                    <div class="title">Baba Ramen Cooking School (南青山)</div>
+                    <div class="desc">參與正宗拉麵烹飪班並享用自製午餐。</div>
+                    <a href="https://maps.google.com/?q=Baba+Ramen+Cooking+School" target="_blank" class="map-btn">📍 Google Maps 導航</a>
                 </div>
             </div>
             <div class="item">
                 <div class="time-tag">下午</div>
                 <div class="details">
-                    <div class="title">Pokémon Center DX (日本橋) & 銀座購物</div>
-                    <div class="desc">前往旗艦店與 Pokémon Cafe 區域巡禮，隨後於銀座逛街。</div>
-                    <a href="https://maps.google.com/?q=Pokemon+Center+DX" target="_blank" class="map-btn">📍 Google Maps 導航</a>
+                    <div class="title">MAPA EXPO (東京國際論壇 Yurakucho Museum)</div>
+                    <div class="desc">前往有樂町參觀 MAPA EXPO 展覽。</div>
+                    <a href="https://maps.google.com/?q=Tokyo+International+Forum" target="_blank" class="map-btn">📍 Google Maps 導航</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="time-tag">傍晚</div>
+                <div class="details">
+                    <div class="title">新宿/代代木買鞋 & 大型 Bookoff 尋寶</div>
+                    <div class="desc">專心買鞋及逛二手動漫書籍專門店。</div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="time-tag">晚餐</div>
+                <div class="details">
+                    <div class="title">Inose Tsukemen (伊之瀬 昆布鹽水沾麵)</div>
+                    <div class="desc">品嚐精緻高質嘅昆布鹽水沾麵。</div>
+                    <a href="https://maps.google.com/?q=Inose+Tsukemen+Shinjuku" target="_blank" class="map-btn">📍 Google Maps 導航</a>
                 </div>
             </div>
         </div>
@@ -314,16 +437,24 @@
     <!-- Day 7 -->
     <div class="day-card">
         <div class="day-header">
-            <span>Day 7 ｜ PokéPark Kanto 主題樂園日</span>
+            <span>Day 7 ｜ PokéPark Kanto 寶可夢樂園 & 澀谷炭香燒鳥</span>
             <span class="day-date">11/25 (三)</span>
         </div>
         <div class="item-list">
             <div class="item">
                 <div class="time-tag">全天</div>
                 <div class="details">
-                    <div class="title">PokéPark Kanto (讀賣樂園區域)</div>
-                    <div class="desc">全家同樂大自然寶可夢體驗園區。</div>
+                    <div class="title">PokéPark Kanto (ポケパーク カントー / 讀賣樂園內)</div>
+                    <div class="desc">盡情投入大自然寶可夢樂園世界。</div>
                     <a href="https://maps.google.com/?q=Yomiuriland" target="_blank" class="map-btn">📍 Google Maps 導航</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="time-tag">晚餐</div>
+                <div class="details">
+                    <div class="title">Shibuya Morimoto (渋谷森本 燒鳥)</div>
+                    <div class="desc">轉場前往澀谷，品嚐人氣極高嘅老字號炭香燒鳥。</div>
+                    <a href="https://maps.google.com/?q=Shibuya+Morimoto" target="_blank" class="map-btn">📍 Google Maps 導航</a>
                 </div>
             </div>
         </div>
@@ -332,23 +463,22 @@
     <!-- Day 8 -->
     <div class="day-card">
         <div class="day-header">
-            <span>Day 8 ｜ 築地市場最後採購與返程</span>
+            <span>Day 8 ｜ 最後整理・15:25 返港</span>
             <span class="day-date">11/26 (四)</span>
         </div>
         <div class="item-list">
             <div class="item">
                 <div class="time-tag">上午</div>
                 <div class="details">
-                    <div class="title">築地場外市場 (Tsukiji Outer Market)</div>
-                    <div class="desc">享用新鮮海鮮早午餐及採買伴手禮。</div>
-                    <a href="https://maps.google.com/?q=Tsukiji+Outer+Market" target="_blank" class="map-btn">📍 Google Maps 導航</a>
+                    <div class="title">草加住處最後收拾與買手信</div>
+                    <div class="desc">整理行李、採購最後手信。</div>
                 </div>
             </div>
             <div class="item">
                 <div class="time-tag">下午</div>
                 <div class="details">
-                    <div class="title">前往機場與搭機返家</div>
-                    <div class="desc">整理行李前往機場，結束豐富的 8 天東京之旅！</div>
+                    <div class="title">前往機場與搭機返港</div>
+                    <div class="desc">前往機場，乘搭 15:25 航班愉快返回香港！</div>
                 </div>
             </div>
         </div>
