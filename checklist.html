@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>東京行程 ｜ 預約與準備事項 Checklist</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --border-radius: 12px;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px 15px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: #ffffff;
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+            border: 1px solid #e9ecef;
+        }
+
+        header {
+            text-align: center;
+            padding: 10px 0 25px;
+            border-bottom: 2px solid #e9ecef;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        .progress-card {
+            background-color: #e8f4ea;
+            border: 1px solid #c3e6cb;
+            border-radius: var(--border-radius);
+            padding: 15px 20px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .progress-title {
+            color: #155724;
+            font-weight: bold;
+            font-size: 1.05rem;
+        }
+
+        .progress-count {
+            background-color: #28a745;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .checklist-group {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+            padding: 20px;
+            border: 1px solid #eef2f5;
+        }
+
+        .group-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #f1f3f5;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 12px 0;
+            border-bottom: 1px dashed #e9ecef;
+            cursor: pointer;
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            margin-top: 4px;
+            margin-right: 12px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: #28a745;
+        }
+
+        .item-text {
+            flex-grow: 1;
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+
+        .item-desc {
+            font-size: 0.85rem;
+            color: #6c757d;
+            margin-top: 2px;
+        }
+
+        .checklist-item input:checked + .item-text .item-title {
+            text-decoration: line-through;
+            color: #adb5bd;
+        }
+
+        .note-badge {
+            display: inline-block;
+            font-size: 0.78rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        .badge-red { background-color: #f8d7da; color: #721c24; }
+        .badge-yellow { background-color: #fff3cd; color: #856404; }
+        .badge-blue { background-color: #cce5ff; color: #004085; }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px 0;
+            color: #adb5bd;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="index.html" class="nav-btn">⬅️ 返回 8日行程表</a>
+
+    <header>
+        <h1>📝 預約與準備事項 Checklist</h1>
+        <div class="subtitle">東京・埼玉・千葉 8日7夜冬日之旅</div>
+    </header>
+
+    <div class="progress-card">
+        <span class="progress-title">🎯 準備完成進度</span>
+        <span class="progress-count" id="progress-bar">0 / 8</span>
+    </div>
+
+    <!-- Group 1: 必備門票與體驗 -->
+    <div class="checklist-group">
+        <div class="group-title">🎟️ 門票與體驗預約</div>
+        
+        <label class="checklist-item">
+            <input type="checkbox" onchange="updateProgress()" id="chk_1">
+            <div class="item-text">
+                <div class="item-title">[Day 2] Sushi Making Tokyo 壽司班</div>
+                <div class="item-desc">預約時段：12:00 PM</div>
+                <span class="note-badge badge-red">已確認預約</span>
+            </div>
+        </label>
+
+        <label class="checklist-item">
+            <input type="checkbox" onchange="updateProgress()" id="chk_2">
+            <div class="item-text">
+                <div class="item-title">[Day 5] Pokémon CL 2027 Chiba 入場/參賽名額</div>
+                <div class="item-desc">幕張 Messe 賽事與參觀資格</div>
+                <span class="note-badge badge-red">需留意官方抽籤公佈</span>
+            </div>
+        </label>
+
+        <label class="checklist-item">
+            <input type="checkbox" onchange="updateProgress()" id="chk_3">
+            <div class="item-text">
+                <div class="item-title">[Day 6] Baba Ramen Cooking School 拉麵班</div>
+                <div class="item-desc">南青山正宗拉麵製作體驗</div>
+                <span class="note-badge badge-yellow">需於官網完成預約</span>
+            </div>
+        </label>
+
+        <label class="checklist-item">
+            <input type="checkbox" onchange="updateProgress()" id="chk_4">
+            <div class="item-text">
+                <div class="item-title">[Day 7] PokéPark Kanto (讀賣樂園) 門票</div>
+                <div class="item-desc">寶可夢樂園入場票</div>
+                <span class="note-badge badge-blue">建議提前購買指定日門票</span>
+            </div>
+        </label>
+    </div>
+
+    <!-- Group 2: 餐廳預約 -->
+    <div class="checklist-group">
+        <div class="group-title">🍽️ 餐廳預約與測量體驗</div>
+
+        <label class="checklist-item">
+            <input type="checkbox" onchange="updateProgress()" id="chk_5">
+            <div class="item-text">
+                <div class="item-title">[Day 2] Maguro Mart (中野吞拿魚專門店)</div>
+                <div class="item-desc">極難訂位人氣名店</div>
+                <span class="note-badge badge-yellow">出發前 1 個月搶訂</span>
+            </div>
+        </label>
+
+        <label class="checklist-item">
+            <input type="checkbox" onchange="updateProgress()" id="chk_6">
+            <div class="item-text">
+                <div class="item-title">[Day 3] 日本橋西川 訂造枕頭諮詢</div>
+                <div class="item-desc">Sleep Master 專業測量服務</div>
+                <span class="note-badge badge-yellow">提前 1-2 個月官網預約</span>
+            </div>
+        </label>
+
+        <label class="checklist-item">
+            <input type="checkbox" onchange="updateProgress()" id="chk_7">
+            <div class="item-text">
+                <div class="item-title">[Day 7] Shibuya Morimoto (澀谷森本燒鳥)</div>
+                <div class="item-desc">老字號炭香燒鳥</div>
+                <span class="note-badge badge-blue">建議提前訂位</span>
+            </div>
+        </label>
+    </div>
+
+    <!-- Group 3: 行前準備 -->
+    <div class="checklist-group">
+        <div class="group-title">✈️ 出發前必備手續</div>
+
+        <label class="checklist-item">
+            <input type="checkbox" onchange="updateProgress()" id="chk_8">
+            <div class="item-text">
+                <div class="item-title">Visit Japan Web 入境申報 / 日本網卡準備</div>
+                <div class="item-desc">填寫 QR Code 與確認 eSIM/實體 SIM 卡</div>
+                <span class="note-badge badge-blue">出發前 3 天完成</span>
+            </div>
+        </label>
+    </div>
+
+    <footer>
+        <p>© 2026 Tokyo Family Itinerary | Powered by GitHub Pages</p>
+    </footer>
+</div>
+
+<script>
+    function updateProgress() {
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        let checkedCount = 0;
+        checkboxes.forEach((chk) => {
+            if (chk.checked) {
+                checkedCount++;
+                localStorage.setItem(chk.id, 'true');
+            } else {
+                localStorage.setItem(chk.id, 'false');
+            }
+        });
+        document.getElementById('progress-bar').innerText = `${checkedCount} / ${checkboxes.length}`;
+    }
+
+    // 載入時復原狀態
+    window.addEventListener('DOMContentLoaded', () => {
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach((chk) => {
+            const saved = localStorage.getItem(chk.id);
+            if (saved === 'true') {
+                chk.checked = true;
+            }
+        });
+        updateProgress();
+    });
+</script>
+
+</body>
+</html>
